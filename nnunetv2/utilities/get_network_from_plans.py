@@ -72,3 +72,4 @@ if __name__ == "__main__":
     data = torch.rand((8, 1, 256, 256))
     target = torch.rand(size=(8, 1, 256, 256))
     outputs = model(data) # this should be a list of torch.Tensor
+    print(outputs)

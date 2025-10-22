@@ -18,10 +18,12 @@ import os
 PLEASE READ documentation/setting_up_paths.md FOR INFORMATION TO HOW TO SET THIS UP
 """
 
-nnUNet_raw = os.environ.get('nnUNet_raw')
-nnUNet_preprocessed = os.environ.get('nnUNet_preprocessed')
-nnUNet_results = os.environ.get('nnUNet_results')
-
+#nnUNet_raw = os.environ.get('nnUNet_raw')
+nnUNet_raw=r'F:\CJY\deep-learning\nnUNet\nnUNet_raw'
+#nnUNet_preprocessed = os.environ.get('nnUNet_preprocessed')
+nnUNet_preprocessed=r'F:\CJY\deep-learning\nnUNet\nnUNet_preprocessed'
+#nnUNet_results = os.environ.get('nnUNet_results')
+nnUNet_results=r'F:\CJY\deep-learning\nnUNet\nnUNet_results'
 if nnUNet_raw is None:
     print("nnUNet_raw is not defined and nnU-Net can only be used on data for which preprocessed files "
           "are already present on your system. nnU-Net cannot be used for experiment planning and preprocessing like "
