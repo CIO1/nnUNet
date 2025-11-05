@@ -45,7 +45,7 @@ def labelme_json_to_mask(
             # 生成输出文件名（casexxx_0000.json → casexxx.png）
             json_filename = json_path.name
             case_id = json_filename.replace("_0000.json", "")
-            output_mask_path = output_dir / f"{case_id}.png"
+            output_mask_path = output_dir / f"{case_id}.tif"
 
             # 读取JSON数据
             with open(json_path, "r", encoding="utf-8") as f:
@@ -100,7 +100,7 @@ def labelme_json_to_mask(
 
             # 保存为16位PNG
             mask_image = Image.fromarray(mask, mode="I;16")  # 16位无符号整数模式
-            mask_image.save(output_mask_path, format="PNG", bits=16)
+            mask_image.save(output_mask_path, format="TIFF", bits=16)
             print(f"成功保存：{output_mask_path.name}\n")
 
         except Exception as e:
@@ -111,8 +111,8 @@ def labelme_json_to_mask(
 
 if __name__ == "__main__":
     # -------------------------- 请根据你的实际情况修改以下参数 --------------------------
-    INPUT_JSON_DIR = r"F:\ImageDataSet\dx20251020\output_png"  # 输入JSON文件夹（存casexxx_0000.json）
-    OUTPUT_MASK_DIR = r"F:\ImageDataSet\dx20251020\output_mask_folder"  # 输出Mask文件夹（存casexxx.png）
+    INPUT_JSON_DIR = r"F:\ImageDataSet\RawData\output_results_all_torch" # 输入JSON文件夹（存casexxx_0000.json）
+    OUTPUT_MASK_DIR = r"F:\ImageDataSet\RawData\mask"  # 输出Mask文件夹（存casexxx.png）
     # 图像尺寸：优先从JSON自动提取；若JSON无imageWidth/imageHeight，需手动指定（例：(1024, 768)）
     MANUAL_IMAGE_SIZE = None  # 手动指定格式：(宽度, 高度)，如MANUAL_IMAGE_SIZE = (844, 459)
     # -----------------------------------------------------------------------------------

@@ -158,10 +158,10 @@ if __name__ == "__main__":
     # 配置路径
     # PLANS_JSON_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_preprocessed\Dataset001_dx0904\nnUNetResEncUNetMPlans.json"
     # MODEL_WEIGHTS_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset001_dx0904\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\fold_0\checkpoint_final.pth"
-    PLANS_JSON_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset003_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\plans.json"
-    MODEL_WEIGHTS_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset003_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\fold_0\checkpoint_final.pth"
-    OUTPUT_TORCHSCRIPT = r"model_output\20251022\libtorch_model__fixInput.pt"  # 供C++调用
-    OUTPUT_ONNX = r"model_output\20251022\onnx_model_fixInput.onnx"  # ONNX格式
+    PLANS_JSON_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset005_dx1024\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\plans.json"
+    MODEL_WEIGHTS_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset005_dx1024\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\fold_0\checkpoint_final.pth"
+    OUTPUT_TORCHSCRIPT = r"model_output\20251022\libtorch_model__fixInput384.pt"  # 供C++调用
+    OUTPUT_ONNX = r"model_output\20251022\onnx_model_fixInput384.onnx"  # ONNX格式
 
     # 创建输出目录
     os.makedirs(os.path.dirname(OUTPUT_TORCHSCRIPT), exist_ok=True)

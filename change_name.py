@@ -13,7 +13,7 @@ def rename_files(folder_path):
     all_files = os.listdir(folder_path)
 
     # 分离PNG和JSON文件
-    png_files = [f for f in all_files if f.lower().endswith('.png')]
+    png_files = [f for f in all_files if f.lower().endswith('.tif')]
     json_files = [f for f in all_files if f.lower().endswith('.json')]
 
     # 提取文件名（不含扩展名）
@@ -35,11 +35,11 @@ def rename_files(folder_path):
         new_basename = f"case{i:03d}_0000"
 
         # 原文件路径
-        old_png_path = os.path.join(folder_path, f"{basename}.png")
+        old_png_path = os.path.join(folder_path, f"{basename}.tif")
         old_json_path = os.path.join(folder_path, f"{basename}.json")
 
         # 新文件路径
-        new_png_path = os.path.join(folder_path, f"{new_basename}.png")
+        new_png_path = os.path.join(folder_path, f"{new_basename}.tif")
         new_json_path = os.path.join(folder_path, f"{new_basename}.json")
 
         # 重命名文件

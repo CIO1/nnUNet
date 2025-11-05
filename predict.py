@@ -222,8 +222,8 @@ class PredictPreprocessor:
         overlay_save_path = os.path.join(output_dir, f"{img_name}_overlay.png")
 
         # 8. 保存结果
-        cv2.imwrite(mask_save_path, pred_argmax)
-        #cv2.imwrite(overlay_save_path, overlay_img)
+        cv2.imwrite(mask_save_path, pred_argmax*122)
+        cv2.imwrite(overlay_save_path, overlay_img)
         print(f"掩模保存至：{mask_save_path}")
         print(f"叠加图像保存至：{overlay_save_path}")
 
@@ -266,11 +266,11 @@ class PredictPreprocessor:
 # 使用示例
 if __name__ == "__main__":
     # 配置路径
-    PLANS_JSON_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset003_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\plans.json"
+    PLANS_JSON_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset004_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\plans.json"
     #INPUT_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_raw\Dataset003_dx1020\imagesTr"  # 可改为单张图片路径或文件夹路径
-    INPUT_PATH = r"F:\ImageDataSet\0827_3A_png"
-    MODEL_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset003_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\fold_0\checkpoint_final.pth"
-    OUTPUT_DIR = r"F:\ImageDataSet\mask"  # 结果保存文件夹
+    INPUT_PATH = r"F:\ImageDataSet\RawData\output_tif"
+    MODEL_PATH = r"F:\CJY\deep-learning\nnUNet\nnUNet_results\Dataset004_dx1020\nnUNetTrainer__nnUNetResEncUNetMPlans__2d\fold_0\checkpoint_final.pth"
+    OUTPUT_DIR = r"F:\ImageDataSet\RawData\output_tif\out"  # 结果保存文件夹
 
     # 初始化预处理器
     preprocessor = PredictPreprocessor(plans_path=PLANS_JSON_PATH)
